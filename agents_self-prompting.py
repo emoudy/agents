@@ -3,10 +3,17 @@ Through self-prompting, our agent can use an LLM as a universal parser that unde
 
 This approach especially valuable is that it creates a reliable bridge between unstructured text and structured data processing. The agent can use this tool whenever it needs to convert natural language information into a format that other systems can process programmatically. This enables workflows where the agent can:
 
-Receive unstructured text input from various sources
-Use prompt_llm_for_json to extract relevant information in a structured format
-Pass the structured data to other APIs or services for further processing
-Make decisions based on the processed results
+- Receive unstructured text input from various sources
+- Use prompt_llm_for_json to extract relevant information in a structured format
+- Pass the structured data to other APIs or services for further processing
+- Make decisions based on the processed results
+
+The tool works by combining several key elements:
+
+- A system message that firmly instructs the LLM to adhere to the provided JSON schema
+- Retry logic to handle potential parsing failures
+- Support for both direct JSON output and markdown-formatted JSON
+- Error handling to ensure we either get valid JSON or fail explicitly
 
 """
 
