@@ -9,11 +9,16 @@ This approach especially valuable is that it creates a reliable bridge between u
 - Make decisions based on the processed results
 
 The tool works by combining several key elements:
-
 - A system message that firmly instructs the LLM to adhere to the provided JSON schema
 - Retry logic to handle potential parsing failures
 - Support for both direct JSON output and markdown-formatted JSON
 - Error handling to ensure we either get valid JSON or fail explicitly
+
+Use the general-purpose approach when:
+- You need to handle a wide variety of document types
+- Document formats and requirements change frequently
+- You’re prototyping or exploring new use cases
+- The downstream systems are flexible about data format
 
 """
 
